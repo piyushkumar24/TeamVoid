@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+header {
+  background-color: #3498db;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 24px;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-section {
+  background-color: #f1f1f1;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.hero-section h2 {
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  color: #777;
+  font-size: 18px;
+}
+
+.scroll-section h2 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.scroll-section p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.scroll-section ol {
+  margin-bottom: 20px;
+}
+
+.scroll-section ol li {
+  margin-bottom: 10px;
+  color: #777;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.upload-section h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+  background-color: #2980b9;
+}
+
+#file-name {
+  color: #777;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.results-section {
+  margin-top: 30px;
+}
+
+.results-section h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.results-section p {
+  color: #777;
+  font-size: 16px;
+}
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer p {
+  color: #777;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .upload-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.analyze-btn {
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.analyze-btn:hover {
+  background-color: #2980b9;
+}
+footer {
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+  color: #888;
+}
+
+footer p::before {
+  content: "© ";
+}
+
+footer p::after {
+  content: " Poaching Detection System. All rights reserved.";
+}
+
+header {
+  background-color: #4285f4;
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #4285f4;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1,
+footer p {
+  color: #fff;
+}

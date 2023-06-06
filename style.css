@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.parent:first-of-type {
+  background: #ffffff url("WallpaperDog-5510437.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+}
+.parent:nth-of-type(2) {
+  background: #ffffff url("WallpaperDog-5510427.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+}
+.parent:nth-of-type(3) {
+  background: #ffffff url("deer.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+.parent:nth-of-type(4) {
+  background: #ffffff url("WallpaperDog-5510437.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+}
+.parent2 {
+  background: #ffffff url("WallpaperDog-5510427.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+}
+.parent:last-of-type {
+  background: #ffffff url("savana.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.parent {
+  width: 100%;
+  height: 150vh;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+  font-family: tahoma;
+  text-align: center;
+  line-height: 180%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.parent p {
+  padding: 25px;
+}
+
+/* .parenta {
+  background: #ffffff url("desktop-1920x1080.jpg") no-repeat center center fixed;
+  background-size: cover;
+} */
+.parent1 :nth-of-type(5) {
+  background: #ffffff url("desktop-1920x1080.jpg") no-repeat center center fixed;
+  background-size: cover;
+}

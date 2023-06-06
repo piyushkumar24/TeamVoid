@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Poaching Detection System</title>
+    <!-- Add CSS stylesheets and JavaScript libraries as needed -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="script.js"></script>
+    <style>
+      @media screen and (max-width: 768px) {
+        .upload-section {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Poaching Detection System</h1>
+    </header>
+
+    <main>
+      <div class="hero-section">
+        <h2>Protecting Wildlife through AI</h2>
+        <p>
+          Our Poaching Detection System uses cutting-edge AI and ML technology
+          to combat wildlife poaching and protect endangered species.
+        </p>
+      </div>
+
+      <div class="scroll-section">
+        <h2>Why is Wildlife Conservation Important?</h2>
+        <p>
+          Wildlife conservation plays a crucial role in maintaining the balance
+          of ecosystems, preserving biodiversity, and protecting endangered
+          species from extinction. Unfortunately, wildlife faces numerous
+          threats, including habitat loss, climate change, and illegal
+          activities like poaching.
+        </p>
+
+        <h2>Poaching Detection System</h2>
+        <p>
+          Our Poaching Detection System is a powerful tool that leverages AI and
+          ML algorithms to detect and prevent wildlife poaching. By analyzing
+          images and videos, it can identify potential poachers, track animal
+          movements, and provide real-time alerts to wildlife conservation
+          authorities.
+        </p>
+
+        <h2>How It Works</h2>
+        <ol>
+          <li>
+            Upload Media: Select an image or video file showcasing wildlife
+            activity or potential poaching incidents.
+          </li>
+          <li>
+            AI Analysis: Our system uses AI and ML algorithms to analyze the
+            media, detecting objects, identifying animals, and assessing the
+            likelihood of poaching activities.
+          </li>
+          <li>
+            Alerts and Reporting: If a poaching incident is detected, the system
+            generates alerts and reports, enabling prompt action by conservation
+            authorities.
+          </li>
+          <li>
+            Collaborative Efforts: By sharing data and insights, our system
+            facilitates collaboration among conservation organizations,
+            researchers, and law enforcement agencies, strengthening wildlife
+            protection measures.
+          </li>
+        </ol>
+
+        <div class="upload-section">
+          <h2>Upload Media</h2>
+          <label for="media-upload" class="custom-file-upload">
+            Choose File
+            <input type="file" id="media-upload" accept="image/, video/" />
+          </label>
+          <p id="file-name"></p>
+          <button class="analyze-btn" onclick="analyzeMedia()">Analyze</button>
+        </div>
+
+        <div class="results-section">
+          <h2>Analysis Results</h2>
+          <div id="results-container">
+            <p id="loading-message" style="display: none">
+              Analyzing media... Please wait.
+            </p>
+            <div id="results"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Poaching Detection System. All rights reserved.</p>
+    </footer>
+
+    <!-- Add any additional HTML elements and scripts as needed -->
+    <script>
+      document
+        .getElementById("media-upload")
+        .addEventListener("change", function (e) {
+          var fileName = e.target.files[0].name;
+          document.getElementById("file-name").innerHTML =
+            "Selected File: " + fileName;
+        });
+
+      function analyzeMedia() {
+        var mediaFile = document.getElementById("media-upload").files[0];
+        if (!mediaFile) {
+          alert("Please select a file to analyze.");
+          return;
+        }
+
+        var formData = new FormData();
+        formData.append("media", mediaFile);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/analyze", true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var results = JSON.parse(xhr.responseText);
+            displayResults(results);
+          } else if (xhr.readyState === 4 && xhr.status !== 200) {
+            alert("An error occurred during analysis.");
+          }
+        };
+
+        document.getElementById("loading-message").style.display = "block";
+        xhr.send(formData);
+      }
+
+      function displayResults(results) {
+        var resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = "";
+
+        // Display the analysis results
+        for (var i = 0; i < results.length; i++) {
+          var result = results[i];
+          var resultText = "<p>Object: " + result.object + "</p>";
+          resultText += "<p>Confidence: " + result.confidence + "</p>";
+          resultsDiv.innerHTML += resultText;
+        }
+
+        document.getElementById("loading-message").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
